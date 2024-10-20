@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 function Header({
 	text = "Feedback UI",
-	bgColor = "rgba(0,0,0,0.4)",
-	textColor = "#ff6a95",
+	bgColor = "#333",
+	textColor = "#f98156",
 	footer,
 }) {
 	const headerStyles = {

@@ -20,37 +20,40 @@ function FeedbackForm() {
 		}
 	}, [feedbackEdit]);
 
-	const handleTextChange = ({ target: { value } }) => {
-		// get the value
-		if (value === "") {
+	const handleTextChange = (e) => {
+		if (e.target.value === "") {
 			setBtnDisabled(true);
 			setMessage(null);
-		} else if (value.trim().length < 10) {
-			// check for less than 10
+		} else if (e.target.value.trim().length < 10) {
 			setMessage("Text must be at least 10 characters");
 			setBtnDisabled(true);
 		} else {
 			setMessage(null);
 			setBtnDisabled(false);
 		}
-		setText(value);
+		setText(e.target.value);
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
+		// add new feedback
 		if (text.trim().length > 10) {
 			const newFeedback = {
 				text,
 				rating,
 			};
+
+			// edit the feedback
 			if (feedbackEdit.edit === true) {
-				console.log(feedbackEdit.item.id);
 				updateFeedback(feedbackEdit.item.id, newFeedback);
 			} else {
 				addFeedback(newFeedback);
 			}
-			setBtnDisabled(true); // add this line to reset disabled
-			setRating(10); // add this line to set rating back to 10
+
+			// reset the feedback
+			setBtnDisabled(true);
+			setRating(10);
 			setText("");
 		}
 	};
@@ -58,7 +61,7 @@ function FeedbackForm() {
 	return (
 		<Card>
 			<form onSubmit={handleSubmit}>
-				<h2>How would you rate your service with us?</h2>
+				<h2>How would you rate your visit in general?</h2>
 				<RatingSelect select={setRating} selected={rating} />
 				<div className="input-group">
 					<input
@@ -76,4 +79,5 @@ function FeedbackForm() {
 		</Card>
 	);
 }
+
 export default FeedbackForm;

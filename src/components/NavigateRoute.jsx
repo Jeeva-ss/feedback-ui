@@ -7,7 +7,6 @@ function NavigateRoute() {
 	const navigate = useNavigate();
 
 	const handleClick = () => {
-		console.log("Clicked...");
 		navigate("/about");
 	};
 
@@ -42,4 +41,5 @@ function NavigateRoute() {
 		</div>
 	);
 }
+
 export default NavigateRoute;

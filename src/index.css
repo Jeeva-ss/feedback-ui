@@ -11,15 +11,20 @@
 	border-radius: 8px;
 	margin: 1rem;
 	color: whitesmoke;
-	background: #ff6a95;
+	background: #f98156;
 	text-decoration: none;
 }
 
 body {
 	font-family: "Poppins", sans-serif;
-	background-color: #202142;
+	background-color: #333;
 	color: #fff;
 	line-height: 1.6;
+}
+
+button {
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
 }
 
 a {
@@ -100,7 +105,7 @@ header {
 
 .rating li:hover,
 .num-display {
-	background: #ff6a95;
+	background: #f98156;
 	color: #fff;
 }
 
@@ -109,7 +114,7 @@ header {
 }
 
 [type="radio"]:checked ~ label {
-	background: #ff6a95;
+	background: #f98156;
 	color: #fff;
 }
 
@@ -169,11 +174,11 @@ input:focus {
 }
 
 .btn-primary {
-	background-color: #202142;
+	background-color: #f98156;
 }
 
 .btn-secondary {
-	background: #ff6a95;
+	background: #f98156;
 }
 
 .btn:hover {
@@ -182,7 +187,7 @@ input:focus {
 }
 
 .btn:disabled {
-	background-color: #cccccc;
+	background-color: #ccc;
 	color: #333;
 	cursor: auto;
 }
@@ -195,7 +200,7 @@ input:focus {
 .message {
 	padding-top: 10px;
 	text-align: center;
-	color: rebeccapurple;
+	color: #f98156;
 }
 
 .about-link {
@@ -221,7 +226,7 @@ input:focus {
 .fa-question {
 	width: 40px;
 	height: 40px;
-	background: #ff6a95;
+	background: #f98156;
 	border-radius: 100%;
 	display: flex;
 	justify-content: center;
@@ -230,6 +235,10 @@ input:focus {
 }
 
 @media (max-width: 600px) {
+	.about {
+		font-size: 62.5%;
+	}
+
 	.rating li {
 		margin: 10px 3px;
 	}
